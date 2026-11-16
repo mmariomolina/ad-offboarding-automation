@@ -1,2 +1,5 @@
 logs/
 *.log
+
+# Never commit credentials
+*.cred.xml

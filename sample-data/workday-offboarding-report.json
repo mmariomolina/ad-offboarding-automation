@@ -1,0 +1,52 @@
+{
+  "Report_Entry": [
+    {
+      "Employee_ID": "10231",
+      "Worker": "Jane Doe",
+      "Username": "jdoe",
+      "Offboarding_Date": "2026-11-14-08:00",
+      "Location": "San Jose, CA",
+      "Legal_Hold": "0"
+    },
+    {
+      "Employee_ID": "10388",
+      "Worker": "Al Smith",
+      "Username": "asmith",
+      "Offboarding_Date": "2026-11-14-05:00",
+      "Location": "New York, NY",
+      "Legal_Hold": "1"
+    },
+    {
+      "Employee_ID": "10412",
+      "Worker": "Bao Nguyen",
+      "Username": "bnguyen",
+      "Offboarding_Date": "2026-11-15+07:00",
+      "Location": "Bangkok, Thailand",
+      "Legal_Hold": "0"
+    },
+    {
+      "Employee_ID": "10457",
+      "Worker": "Carla Garcia",
+      "Username": "cgarcia",
+      "Offboarding_Date": "2026-11-12-08:00",
+      "Location": "San Jose, CA",
+      "Legal_Hold": "0"
+    },
+    {
+      "Employee_ID": "10501",
+      "Worker": "Gary Okafor",
+      "Username": "gokafor",
+      "Offboarding_Date": "2026-11-14+00:00",
+      "Location": "Lagos, Nigeria",
+      "Legal_Hold": "0"
+    },
+    {
+      "Employee_ID": "10533",
+      "Worker": "Dana Lee",
+      "Username": "dlee",
+      "Offboarding_Date": "",
+      "Location": "Austin, TX",
+      "Legal_Hold": "0"
+    }
+  ]
+}

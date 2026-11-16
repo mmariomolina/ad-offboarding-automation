@@ -38,3 +38,38 @@ function Write-AuditRecord {
         Detail     = $Detail
     } | Export-Csv -Path $LogPath -Append -NoTypeInformation -WhatIf:$false -Confirm:$false
 }
+
+function Write-RemovedGroupRecord {
+    <#
+        Keeps a dedicated record of every AD group taken away from a user,
+        with the group's full DN, so access can be put back exactly if an
+        offboarding was a mistake or someone is rehired. Like the audit log,
+        it's written even in -WhatIf mode.
+    #>
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory)] [string] $LogPath,
+        [Parameter(Mandatory)] [string] $User,
+        [string] $EmployeeId = '',
+        [Parameter(Mandatory)] [string] $GroupName,
+        [Parameter(Mandatory)] [string] $GroupDN,
+        [ValidateSet('Removed', 'Failed', 'WhatIf')]
+        [string] $Result = 'Removed',
+        [string] $Detail = ''
+    )
+
+    $logDir = Split-Path -Path $LogPath -Parent
+    if ($logDir -and -not (Test-Path -Path $logDir)) {
+        New-Item -Path $logDir -ItemType Directory -Force -WhatIf:$false | Out-Null
+    }
+
+    [PSCustomObject]@{
+        Timestamp  = (Get-Date).ToString('yyyy-MM-dd HH:mm:ss')
+        User       = $User
+        EmployeeId = $EmployeeId
+        GroupName  = $GroupName
+        GroupDN    = $GroupDN
+        Result     = $Result
+        Detail     = $Detail
+    } | Export-Csv -Path $LogPath -Append -NoTypeInformation -WhatIf:$false -Confirm:$false
+}
